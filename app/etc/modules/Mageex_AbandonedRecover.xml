@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+<config>
+    <modules>
+        <Mageex_AbandonedRecover>
+            <active>true</active>
+            <codePool>local</codePool>
+        </Mageex_AbandonedRecover>
+    </modules>
+</config> 
