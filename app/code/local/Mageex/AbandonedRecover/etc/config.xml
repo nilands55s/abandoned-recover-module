@@ -35,34 +35,6 @@
         </routers>
     </admin>
     <adminhtml>
-		<menu>
-			<abandonedrecover module="abandonedrecover">
-				<title>AbandonedRecover</title>
-				<sort_order>71</sort_order>               
-				<children>
-					<items module="abandonedrecover">
-						<title>Manage Items</title>
-						<sort_order>0</sort_order>
-						<action>abandonedrecover/adminhtml_abandonedrecover</action>
-					</items>
-				</children>
-			</abandonedrecover>
-		</menu>
-		<acl>
-			<resources>
-				<all>
-					<title>Allow Everything</title>
-				</all>
-				<admin>
-					<children>
-						<Mageex_AbandonedRecover>
-							<title>AbandonedRecover Module</title>
-							<sort_order>10</sort_order>
-						</Mageex_AbandonedRecover>
-					</children>
-				</admin>
-			</resources>
-		</acl>
 		<layout>
 			<updates>
 				<abandonedrecover>
