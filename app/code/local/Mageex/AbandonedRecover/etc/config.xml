@@ -89,4 +89,13 @@
             </abandonedrecover>
         </helpers>
     </global>
+	<crontab>
+        <jobs>
+            <abandonedrecover_sendmail>
+                <run>
+                    <model>abandonedrecover/observer::scheduledCron</model>
+                </run>
+            </abandonedrecover_sendmail>
+        </jobs>
+    </crontab>
 </config>

@@ -5,8 +5,7 @@ class Mageex_AbandonedRecover_Block_Adminhtml_AbandonedRecover extends Mage_Admi
   {
     $this->_controller = 'adminhtml_abandonedrecover';
     $this->_blockGroup = 'abandonedrecover';
-    $this->_headerText = Mage::helper('abandonedrecover')->__('Item Manager');
-    $this->_addButtonLabel = Mage::helper('abandonedrecover')->__('Add Item');
+    $this->_headerText = Mage::helper('abandonedrecover')->__('Abandoned Recover Manager');
     parent::__construct();
   }
 }

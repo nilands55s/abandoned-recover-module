@@ -5,8 +5,8 @@ class Mageex_AbandonedRecover_Adminhtml_AbandonedRecoverController extends Mage_
 
 	protected function _initAction() {
 		$this->loadLayout()
-			->_setActiveMenu('abandonedrecover/items')
-			->_addBreadcrumb(Mage::helper('adminhtml')->__('Items Manager'), Mage::helper('adminhtml')->__('Item Manager'));
+			->_setActiveMenu('newsletter/items')
+			->_addBreadcrumb(Mage::helper('adminhtml')->__('Abandoned Recover Manager'), Mage::helper('adminhtml')->__('Abandoned Recover Manager'));
 		
 		return $this;
 	}   

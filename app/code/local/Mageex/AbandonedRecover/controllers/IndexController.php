@@ -3,15 +3,18 @@ class Mageex_AbandonedRecover_IndexController extends Mage_Core_Controller_Front
 {
     public function indexAction()
     {
+		/*
     	$collection = Mage::getResourceModel('reports/quote_collection');
 		$storeIds = Mage::app()->getStore()->getId();
 		$collection->prepareForAbandonedReport($storeIds);
 		
 		foreach($collection as $item){
-			echo '<pre>';
-			print_r($item->getSubtotal());
-			echo '</pre>';
+			$customerId = $item->getCustomerId();
+			echo $this->getLayout()->createBlock('abandonedrecover/crosssell')->setData('customer',$customerId)->toHtml();
 		}
+		
     	exit;
+		*/
+		$status = Mage::getModel('abandonedrecover/processdata')->sendMail();
     }
 }
