@@ -44,6 +44,14 @@
 		</layout>
     </adminhtml>   
     <global>
+		<!--
+		<rewrite>
+            <mage_adminhtml_system_email_template>           
+                <from><![CDATA[#^/admin/system_email_template#]]></from>
+                <to>/abandonedrecover/email_template</to>
+            </mage_adminhtml_system_email_template>           
+       </rewrite>
+	   -->
         <models>
             <abandonedrecover>
                 <class>Mageex_AbandonedRecover_Model</class>
