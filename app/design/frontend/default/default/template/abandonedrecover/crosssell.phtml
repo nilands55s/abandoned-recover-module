@@ -1,0 +1,54 @@
+<?php
+    $_productCollection=$this->getProducts();
+    $_helper = $this->helper('catalog/output');
+?>
+<div class="abandoned_product list-product" style="background: none repeat scroll 0 0 #FAFAEC;
+		border: 1px solid #CEC3B6;
+		margin:0 0 10px 0;
+		padding: 12px 15px;">
+	<h2><?php echo $this->__('Your product:') ?></h2>
+	<ul style="list-style: none outside none;">
+	<?php foreach ($_productCollection as $_product): ?>
+		<li style="float:left;
+		padding: 12px 10px 10px;width:138px;" class="item<?php if( ++$_iterator == sizeof($_productCollection) ): ?> last<?php endif; ?>">
+            <?php // Product Image ?>
+            <a href="<?php echo $_product->getProductUrl() ?>" title="<?php echo $this->stripTags($this->getImageLabel($_product, 'small_image'), null, true) ?>" class="product-image"><img src="<?php echo $this->helper('catalog/image')->init($_product, 'small_image')->resize(135); ?>" width="135" height="135" alt="<?php echo $this->stripTags($this->getImageLabel($_product, 'small_image'), null, true) ?>" /></a>
+            <?php // Product description ?>
+            <div class="product-shop">
+                <div class="f-fix">
+                    <?php $_productNameStripped = $this->stripTags($_product->getName(), null, true); ?>
+                    <h2 class="product-name" style="font-size: 12px;
+		font-weight: bold;"><a href="<?php echo $_product->getProductUrl() ?>" title="<?php echo $_productNameStripped; ?>"><?php echo $_helper->productAttribute($_product, $_product->getName() , 'name'); ?></a></h2>
+                    <?php if($_product->getRatingSummary()): ?>
+                    <?php echo $this->getReviewsSummaryHtml($_product) ?>
+                    <?php endif; ?>
+                    <?php echo $this->getPriceHtml($_product, true) ?>
+                </div>
+            </div>
+        </li>
+	<?php endforeach; ?>
+	<div class="clr" style="clear:both;"></div>
+	</ul>
+</div>
+<?php if($this->getItemCount()): ?>
+<div class="crosssell list-product" style="background: none repeat scroll 0 0 #FAFAEC;
+		border: 1px solid #CEC3B6;
+		margin:0 0 10px 0;
+		padding: 12px 15px;">
+    <h2><?php echo $this->__('Based on your selection, you may be interested in the following items:') ?></h2>
+    <ul id="crosssell-products-list" style="list-style: none outside none;">
+    <?php foreach ($this->getItems() as $_item): ?>
+        <li class="item" style="float:left;
+		padding: 12px 10px 10px;width:138px;">
+            <a class="product-image" href="<?php echo $_item->getProductUrl() ?>" title="<?php echo $this->htmlEscape($_item->getName()) ?>"><img src="<?php echo $this->helper('catalog/image')->init($_item, 'thumbnail')->resize(75); ?>" width="75" height="75" alt="<?php echo $this->htmlEscape($_item->getName()) ?>" /></a>
+            <div class="product-details">
+                <h3 class="product-name" style="font-size: 12px;
+		font-weight: bold;"><a href="<?php echo $_item->getProductUrl() ?>"><?php echo $this->htmlEscape($_item->getName()) ?></a></h3>
+                <?php echo $this->getPriceHtml($_item, true) ?>
+            </div>
+        </li>
+    <?php endforeach; ?>
+    </ul>
+	<div class="clr" style="clear:both;"></div>
+</div>
+<?php endif; ?>
