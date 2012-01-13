@@ -1,0 +1,126 @@
+<?xml version="1.0"?>
+<config>
+    <tabs>
+        <mageex translate="label" module="abandonedrecover">
+            <label>Mageex Modules</label>
+            <sort_order>195</sort_order>
+        </mageex>
+    </tabs>
+    <sections>
+        <abandonedrecover translate="label" module="abandonedrecover">
+            <label>Abandoned Recover</label>
+            <tab>mageex</tab>
+            <frontend_type>text</frontend_type>
+            <sort_order>10</sort_order>
+            <show_in_default>1</show_in_default>
+            <show_in_website>0</show_in_website>
+            <show_in_store>1</show_in_store>
+            <groups>
+				<general translate="label" module="abandonedrecover">
+                    <label>General</label>
+                    <sort_order>1</sort_order>
+                    <show_in_default>1</show_in_default>
+                    <show_in_website>1</show_in_website>
+                    <show_in_store>1</show_in_store>
+                    <fields>
+                        <enabled translate="label">
+                            <label>Enable Module Abandoned Recover</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                            <sort_order>5</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </enabled> 
+	                    <time_start>
+	                    	<label>Start Time</label>
+	                        <frontend_type>time</frontend_type><!--
+	                        <comment>The time</comment>
+	                        --><sort_order>20</sort_order>
+	                        <show_in_default>1</show_in_default>
+	                        <show_in_website>1</show_in_website>
+	                        <show_in_store>1</show_in_store>
+							<comment>Exist data will be processed at your choosen time</comment>
+	                    </time_start>
+						<frequency>
+							<label>Frequency</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>Mageex_AbandonedRecover_Model_System_Config_Source_Frequency</source_model>
+                            <backend_model>Mageex_AbandonedRecover_Model_System_Config_Backend_Cron</backend_model>
+                            <sort_order>25</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+						</frequency>
+                    </fields>
+                </general>
+                <email translate="label" module="abandonedrecover">
+                    <label>Email Config</label>
+                    <sort_order>2</sort_order>
+                    <show_in_default>1</show_in_default>
+                    <show_in_website>1</show_in_website>
+                    <show_in_store>1</show_in_store>
+                    <fields>
+						<host translate="label comment">
+							<comment>Example: stmp.google.com</comment>
+							<label>Host</label>  
+							<frontend_type>text</frontend_type>
+							<sort_order>1</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>0</show_in_website>
+							<show_in_store>0</show_in_store>
+						</host>
+						<username translate="label comment">
+							<comment>UserName login SMTP</comment>
+							<label>UserName</label>  
+							<frontend_type>text</frontend_type>
+							<sort_order>2</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>0</show_in_website>
+							<show_in_store>0</show_in_store>
+						</username>
+						<password translate="label comment">
+							<comment>Password login SMTP</comment>
+							<label>Password</label>  
+							<frontend_type>password</frontend_type>
+							<sort_order>3</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>0</show_in_website>
+							<show_in_store>0</show_in_store>
+						</password>
+						
+						
+                        <email_template translate="label">
+                            <label>Email template</label>
+                            <frontend_type>Select</frontend_type>
+                            <source_model>adminhtml/system_config_source_email_template</source_model>
+                            <sort_order>5</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </email_template>
+                        <sendername translate="label comment">
+								<label>Sender Name</label>  
+								<frontend_type>text</frontend_type>								
+								<sort_order>7</sort_order>
+								<show_in_default>1</show_in_default>
+								<show_in_website>0</show_in_website>
+								<show_in_store>0</show_in_store>
+						</sendername>
+						<senderemail translate="label comment">
+								<label>Sender Email</label>  
+								<frontend_type>text</frontend_type>								
+								<sort_order>10</sort_order>
+								<show_in_default>1</show_in_default>
+								<show_in_website>0</show_in_website>
+								<show_in_store>0</show_in_store>
+						</senderemail>
+						
+						
+                    </fields>
+                </email>
+				
+            </groups>
+        </abandonedrecover>
+    </sections>
+</config>
